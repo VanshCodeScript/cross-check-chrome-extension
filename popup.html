@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Universal Reminders</title>
+    <!-- Mozilla Headline via CDN -->
+    <link href="https://fonts.cdnfonts.com/css/mozilla-headline" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <h1>Universal Reminders</h1>
+      <nav>
+        <button id="tab-reminders" class="tab active">Reminders</button>
+        <button id="tab-checklist" class="tab">Checklist</button>
+      </nav>
+    </header>
+
+    <section id="reminders-section" class="tabpanel active">
+      <form id="reminder-form">
+        <div class="row">
+          <label>Name</label>
+          <input id="r-name" type="text" placeholder="e.g., Submit report" required />
+        </div>
+        <div class="row">
+          <label>Deadline</label>
+          <input id="r-deadline" type="datetime-local" required />
+        </div>
+        <div class="row">
+          <label>Details</label>
+          <textarea id="r-details" placeholder="Any notes or link..."></textarea>
+        </div>
+        <button type="submit" class="primary">Add Reminder</button>
+      </form>
+
+      <div class="list-header">
+        <h2>Your Reminders</h2>
+        <button id="clear-past" class="ghost">Clear Past</button>
+      </div>
+      <ul id="reminders-list" class="list"></ul>
+    </section>
+
+    <section id="checklist-section" class="tabpanel">
+      <form id="checklist-form">
+        <div class="row">
+          <label>New Item</label>
+          <input id="c-text" type="text" placeholder="e.g., Buy markers" required />
+        </div>
+        <button type="submit" class="primary">Add Item</button>
+      </form>
+
+      <div class="list-header">
+        <h2>Your Checklist</h2>
+        <button id="clear-done" class="ghost">Clear Done</button>
+      </div>
+      <ul id="checklist-list" class="list"></ul>
+    </section>
+
+    <footer>
+      <small>Syncs across Chrome. Notifies when 1 day left.</small>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Reminders & Checklist",
+  "version": "1.0.0",
+  "description": "Add reminders and checklists that follow you across all sites. Get notified when a reminder hits 1 day left.",
+  "permissions": ["storage", "alarms", "notifications"],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Universal Reminders"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
